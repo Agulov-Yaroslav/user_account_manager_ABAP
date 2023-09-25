@@ -1,0 +1,32 @@
+*&---------------------------------------------------------------------*
+*& Report Z_USER_ACCOUNT_MANAGER
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_user_account_manager.
+
+
+
+DATA: lv_firstname TYPE string,
+      lv_lastname  TYPE string,
+      lv_address   TYPE string.
+
+
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
+PARAMETERS: p_name  TYPE string,
+            p_sname TYPE string,
+            p_adds  TYPE string.
+SELECTION-SCREEN END OF BLOCK b1.
+
+
+WRITE: / 'User Account Management',
+       / '-----------------------'.
+
+lv_firstname = p_name.
+lv_lastname = p_sname.
+lv_address = p_adds.
+
+WRITE: / 'User Details:',
+       / 'First Name: ', lv_firstname,
+       / 'Last Name:  ', lv_lastname,
+       / 'Address:    ', lv_address.
